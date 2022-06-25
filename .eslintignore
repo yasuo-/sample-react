@@ -39,3 +39,14 @@ dist/**/*
 
 # ignore yarn.lock
 yarn.lock
+
+cypress.config.ts
+cypress/plugins/index.ts
+cypress/support/commands.ts
+cypress/support/e2e.ts
+jest.config.ts
+setup/
+
+tsconfig.jest.json
+tsconfig.json
+tsconfig.paths.json
