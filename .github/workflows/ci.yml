@@ -22,6 +22,7 @@ jobs:
       - run: yarn test:jest
       - run: yarn lint
       - run: yarn check-format
+
   cypress-run:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +33,7 @@ jobs:
           cache: npm
       - run: mv .env.example .env
       - uses: cypress-io/github-action@v4
-          with:
-            build: yarn build
-            start: yarn serve
-            browser: chrome
+        with:
+          build: yarn build
+          start: yarn serve
+          browser: chrome
