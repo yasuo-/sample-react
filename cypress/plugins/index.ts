@@ -15,13 +15,10 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-export default (
-  on: Cypress.PluginEvents,
-  config: Cypress.PluginConfigOptions
-) => {
+export default (on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require("@cypress/code-coverage/task")(on, config);
+  require('@cypress/code-coverage/task')(on, config);
   return config;
 };

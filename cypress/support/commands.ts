@@ -8,7 +8,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-import "@testing-library/cypress/add-commands";
+import '@testing-library/cypress/add-commands';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -20,12 +20,11 @@ declare global {
        */
       getByCySelector(selector: string): Chainable<Element>;
     }
-
   }
 }
 
 // @ts-ignore
-Cypress.Commands.add("getByCySelector", (selector: string) => {
+Cypress.Commands.add('getByCySelector', (selector: string) => {
   return cy.get(`[data-cy=${selector}]`);
 });
 
