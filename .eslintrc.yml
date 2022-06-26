@@ -42,9 +42,13 @@ rules:
         - object
         - type
         - index
+      pathGroups:
+        - pattern: react
+          group: external
+          position: before
       newlines-between: always
       pathGroupsExcludedImportTypes:
-        - builtin
+        - react
       alphabetize:
         order: asc
         caseInsensitive: true
