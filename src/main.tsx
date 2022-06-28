@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
+import reportWebVitals from './utils/reportWebVitals';
 import '@public/styles/index.css';
 
 const container = document.getElementById('app');
@@ -15,3 +16,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+reportWebVitals();

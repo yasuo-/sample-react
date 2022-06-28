@@ -1,4 +1,6 @@
 import React from 'react';
+
+import clsx from 'clsx';
 import './button.css';
 
 interface ButtonProps {
@@ -34,11 +36,14 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={clsx('bg-red-200',
+        `storybook-button--${size}`,
+        {'storybook-button--primary': primary},
+        {'storybook-button--secondary': !primary})
+    }
       style={{ backgroundColor }}
       {...props}
     >
