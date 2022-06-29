@@ -1,4 +1,5 @@
-import '../public/styles/index.css'
+import { MemoryRouter } from 'react-router-dom';
+import '../public/styles/index.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -31,3 +32,6 @@ export const parameters = {
     manual: true,
   },
 };
+
+/** decorators **/
+export const decorators = [(Story) => <MemoryRouter>{Story()}</MemoryRouter>];
