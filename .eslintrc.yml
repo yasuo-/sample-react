@@ -36,17 +36,17 @@ rules:
     - groups:
         - builtin
         - external
-        - object
         - internal
-        - - parent
-          - sibling
+        - parent
+        - sibling
         - type
         - index
+        - object
       pathGroups:
         - pattern: react
           group: external
           position: before
-      # newlines-between: always
+      newlines-between: always-and-inside-groups
       pathGroupsExcludedImportTypes:
         - react
       alphabetize:
