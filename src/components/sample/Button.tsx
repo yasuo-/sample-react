@@ -39,11 +39,12 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={clsx('bg-red-200',
+      className={clsx(
+        'bg-red-200',
         `storybook-button--${size}`,
-        {'storybook-button--primary': primary},
-        {'storybook-button--secondary': !primary})
-    }
+        { 'storybook-button--primary': primary },
+        { 'storybook-button--secondary': !primary }
+      )}
       style={{ backgroundColor }}
       {...props}
     >

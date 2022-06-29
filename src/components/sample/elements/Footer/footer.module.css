@@ -2,27 +2,26 @@
 
 @layer components {
   .footerBox {
-    @apply bg-white pt-4 sm:pt-10 lg:pt-12
+    @apply bg-white pt-4 sm:pt-10 lg:pt-12;
   }
 
   .footerInnerBox {
-    @apply max-w-screen-2xl px-4 md:px-8 mx-auto
+    @apply max-w-screen-2xl px-4 md:px-8 mx-auto;
   }
 
   .footerContent {
-    @apply flex flex-col items-center border-t pt-6
+    @apply flex flex-col items-center border-t pt-6;
   }
 
   .footerContentNav {
-    @apply flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 md:gap-6 mb-4
+    @apply flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 md:gap-6 mb-4;
   }
 
   .footerContentLink {
-    @apply text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100
+    @apply text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100;
   }
 
-
   .footerCopyright {
-    @apply text-gray-400 text-sm text-center py-4
+    @apply text-gray-400 text-sm text-center py-4;
   }
 }

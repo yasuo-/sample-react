@@ -2,14 +2,14 @@
 
 @layer components {
   .headerBox {
-    @apply max-w-screen-2xl px-4 md:px-8 mx-auto
+    @apply max-w-screen-2xl px-4 md:px-8 mx-auto;
   }
 
   .header {
-    @apply flex justify-between items-center py-4 md:py-3
+    @apply flex justify-between items-center py-4 md:py-3;
   }
 
   .headerLogo {
-    @apply inline-flex items-center text-xl md:text-2xl font-bold gap-2.5
+    @apply inline-flex items-center text-xl md:text-2xl font-bold gap-2.5;
   }
 }
