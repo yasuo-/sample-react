@@ -15,8 +15,8 @@
     "serve": "serve --no-clipboard --single --listen 3000 build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "check-format": "prettier --check --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
+    "format:fix": "prettier --write src/",
+    "check-format": "prettier --check src/"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
