@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '@/App';
 
+const LOCALHOST = 'http://localhost/';
+
 /**
  * renderWithRouter
  * helper function to render component with router
@@ -34,7 +36,7 @@ describe('App', () => {
     const linkElement = screen.getByText(/site title/i);
     userEvent.click(linkElement);
     waitFor(() => {
-      expect(window.location.href).toBe('http://localhost/');
+      expect(window.location.href).toBe(LOCALHOST);
     });
   });
 
@@ -43,7 +45,7 @@ describe('App', () => {
     const linkElement = screen.getByText(/more/i);
     userEvent.click(linkElement);
     waitFor(() => {
-      expect(window.location.href).toBe('http://localhost/');
+      expect(window.location.href).toBe(LOCALHOST);
     });
   });
 
