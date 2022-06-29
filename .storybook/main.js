@@ -7,6 +7,14 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    {
+      name: '@storybook/addons-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        }
+      }
+    }
   ],
   framework: '@storybook/react',
   core: {

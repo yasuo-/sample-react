@@ -1,3 +1,6 @@
+import { MemoryRouter } from 'react-router-dom';
+import '../public/styles/index.css';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -29,3 +32,6 @@ export const parameters = {
     manual: true,
   },
 };
+
+/** decorators **/
+export const decorators = [(Story) => <MemoryRouter>{Story()}</MemoryRouter>];
