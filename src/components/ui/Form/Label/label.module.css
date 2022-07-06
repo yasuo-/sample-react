@@ -1,0 +1,35 @@
+@tailwind components;
+
+@layer components {
+  .label {
+    @apply font-medium leading-none;
+  }
+
+  .sm {
+    @apply text-sm;
+  }
+
+  .md {
+    @apply text-base;
+  }
+
+  .lg {
+    @apply text-lg;
+  }
+
+  .primary {
+    @apply text-indigo-500;
+  }
+
+  .secondary {
+    @apply text-gray-500;
+  }
+
+  .white {
+    @apply text-white;
+  }
+
+  .black {
+    @apply text-gray-700;
+  }
+}
