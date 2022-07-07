@@ -22,7 +22,7 @@ jobs:
       - run: yarn lint
       - run: yarn check-format
       - name: Run Tests
-        run: yarn test:coverage
+        run: yarn test:coverage -u
       - name: Upload coverage reports to Codecov
         run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov

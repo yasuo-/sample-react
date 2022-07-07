@@ -1,0 +1,43 @@
+@tailwind components;
+
+@layer components {
+  .avatar {
+    @apply inline-flex items-center justify-center align-middle rounded-full overflow-hidden;
+  }
+
+  .sm {
+    @apply w-12 h-12;
+  }
+
+  .md {
+    @apply w-16 h-16;
+  }
+
+  .lg {
+    @apply w-24 h-24;
+  }
+
+  .avatarImage {
+    @apply w-full h-full object-cover object-center;
+  }
+
+  .avatarFallback {
+    @apply flex items-center justify-center w-full h-full;
+  }
+
+  .avatarFallbackText {
+    @apply text-base font-medium leading-none;
+  }
+
+  .primary {
+    @apply bg-indigo-500 text-white;
+  }
+
+  .secondary {
+    @apply bg-gray-200 text-gray-700;
+  }
+
+  .white {
+    @apply bg-white text-gray-700;
+  }
+}
