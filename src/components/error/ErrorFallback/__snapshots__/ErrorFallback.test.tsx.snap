@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorFallback Ui Components should snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      エラーが発生しました。
+    </h2>
+    <pre>
+      An error has occurred.
+    </pre>
+  </div>
+</DocumentFragment>
+`;

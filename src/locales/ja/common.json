@@ -1,0 +1,9 @@
+{
+  "error": {
+    "unknown": "Unknown Error",
+    "not_found": {
+      "title": "ページが見つかりません",
+      "message": "ページが見つかりませんでした。"
+    }
+  }
+}
