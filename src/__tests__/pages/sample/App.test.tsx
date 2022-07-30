@@ -4,7 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 
-import App from '@/App';
+import App from '@/pages/sample/App';
 
 const LOCALHOST = 'http://localhost/';
 
