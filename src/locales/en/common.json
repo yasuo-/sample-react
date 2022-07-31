@@ -1,0 +1,9 @@
+{
+  "error": {
+    "unknown": "Unknown Error",
+    "not_found": {
+      "title": "Page not found",
+      "message": "Page not found"
+    }
+  }
+}
