@@ -15,7 +15,7 @@ describe('Head Components', () => {
   it('should add proper page title and meta description', async () => {
     render(
       <HelmetProvider>
-        <Head title={title} description={description} />
+        <Head title={title} description={description}></Head>
       </HelmetProvider>
     );
     await waitFor(() => expect(document.title).toEqual(`${title} | ${titleSuffix}`));
