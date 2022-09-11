@@ -14,6 +14,7 @@ describe('Avatar Ui Components', () => {
   const globalImage = window.Image;
 
   beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window.Image as any) = class MockImage {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       onload: () => void = () => {};
