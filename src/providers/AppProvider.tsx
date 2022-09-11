@@ -25,10 +25,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   return (
     <I18nextProvider i18n={i18n}>
       <QueryClientProvider client={queryClient}>
-      　　　　<HelmetProvider context={helmetContext}>
-        　　　　　<ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
-      　　　　</HelmetProvider>
-　　　　　　　　　　　　　</QueryClientProvider>
+        <HelmetProvider context={helmetContext}>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+        </HelmetProvider>
+      </QueryClientProvider>
     </I18nextProvider>
   );
 };
