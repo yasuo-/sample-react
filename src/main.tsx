@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import reportWebVitals from './utils/reportWebVitals';
+import '@aws-amplify/ui-react/styles.css';
 import '@public/styles/index.css';
 
 const container = document.getElementById('root');

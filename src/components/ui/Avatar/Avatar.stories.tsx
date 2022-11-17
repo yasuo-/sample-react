@@ -26,7 +26,6 @@ Default.args = {
   alt: 'Default Avatar',
   size: 'md',
   backgroundColor: 'white',
-  fallbackText: 'DT',
 };
 
 SmallSizeAvatar.args = {
@@ -34,7 +33,6 @@ SmallSizeAvatar.args = {
   alt: 'Small Size Avatar',
   size: 'sm',
   backgroundColor: 'white',
-  fallbackText: 'DT',
 };
 
 LargeSizeAvatar.args = {
@@ -42,23 +40,19 @@ LargeSizeAvatar.args = {
   alt: 'Large Size Avatar',
   size: 'lg',
   backgroundColor: 'white',
-  fallbackText: 'DT',
 };
 
 FallbackAvatar.args = {
   size: 'md',
   backgroundColor: 'white',
-  fallbackText: 'FB',
 };
 
 FallbackPrimaryColorAvatar.args = {
   size: 'md',
   backgroundColor: 'primary',
-  fallbackText: 'FB',
 };
 
 FallbackSecondaryColorAvatar.args = {
   size: 'md',
   backgroundColor: 'secondary',
-  fallbackText: 'FB',
 };

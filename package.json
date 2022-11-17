@@ -20,10 +20,12 @@
     "check-format": "prettier --check src/"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^4.0.0",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/forms": "^0.5.3",
     "@tanstack/react-query": "^4.0.10",
     "autoprefixer": "^10.4.7",
+    "aws-amplify": "^5.0.1",
     "clsx": "^1.1.1",
     "i18next": "^21.8.14",
     "i18next-browser-languagedetector": "^6.1.4",

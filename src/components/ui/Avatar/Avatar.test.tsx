@@ -10,7 +10,6 @@ describe('Avatar Ui Components', () => {
   const DELAY = 600;
   let rendered: RenderResult;
   let image: HTMLElement | null = null;
-  const fallbackText = 'SS';
   const globalImage = window.Image;
 
   beforeAll(() => {
@@ -34,7 +33,7 @@ describe('Avatar Ui Components', () => {
   });
 
   beforeEach(() => {
-    rendered = render(<Avatar src="/test.jpg" alt={'alt text'} fallbackText={fallbackText} />);
+    rendered = render(<Avatar src="/test.jpg" alt={'alt text'} />);
   });
 
   it('displayName is Avatar', () => {
@@ -54,26 +53,5 @@ describe('Avatar Ui Components', () => {
   it('should render the image after it has loaded', async () => {
     image = await rendered.findByRole('img');
     expect(image).toBeInTheDocument();
-  });
-});
-
-describe('Avatar Ui Components has fallback', () => {
-  let rendered: RenderResult;
-  let fallback: HTMLElement | null;
-
-  beforeEach(() => {
-    rendered = render(<Avatar fallbackText={'FT'} />);
-  });
-
-  it('should not fallback', async () => {
-    fallback = await rendered.queryByText('FT');
-    expect(fallback).not.toBeInTheDocument();
-  });
-
-  it('should render a fallback after the delay', async () => {
-    fallback = rendered.queryByText('FT');
-    expect(fallback).not.toBeInTheDocument();
-    fallback = await rendered.findByText('FT');
-    expect(fallback).toBeInTheDocument();
   });
 });
