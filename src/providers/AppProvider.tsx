@@ -23,7 +23,7 @@ const theme: Theme = {
 };
 
 // Create a client
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       suspense: true,

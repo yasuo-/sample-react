@@ -1,3 +1,4 @@
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from 'react-router-dom';
 
 import { AppProvider } from './providers';
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <AppProvider>
       <RouterProvider router={router} />
+      <ReactQueryDevtools position="bottom-right" />
     </AppProvider>
   );
 };
