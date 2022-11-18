@@ -18,7 +18,8 @@ export default defineConfig({
     alias: {
       '@/': `${__dirname}/src/`,
       '@public/': `${__dirname}/public/`,
-      './runtimeConfig': './runtimeConfig.browser',
+      find: './runtimeConfig',
+      replacement: './runtimeConfig.browser',
     },
   },
 });

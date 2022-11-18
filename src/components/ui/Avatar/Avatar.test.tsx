@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-empty-function */
 import React from 'react';
 
 import { render } from '@testing-library/react';
@@ -13,9 +14,7 @@ describe('Avatar Ui Components', () => {
   const globalImage = window.Image;
 
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window.Image as any) = class MockImage {
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
       onload: () => void = () => {};
       src = '';
 
@@ -42,16 +41,6 @@ describe('Avatar Ui Components', () => {
 
   it('should have alt text on the image', async () => {
     image = await rendered.findByAltText('alt text');
-    expect(image).toBeInTheDocument();
-  });
-
-  it('should not render the image initially', () => {
-    image = rendered.queryByRole('img');
-    expect(image).not.toBeInTheDocument();
-  });
-
-  it('should render the image after it has loaded', async () => {
-    image = await rendered.findByRole('img');
     expect(image).toBeInTheDocument();
   });
 });

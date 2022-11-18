@@ -98,6 +98,8 @@ export default {
       '<rootDir>/src/__mocks__/fileMock.js',
     '^@/(.+)$': '<rootDir>/src/$1',
     '^@public/(.+)$': '<rootDir>/public/$1',
+    // https://github.com/uuidjs/uuid/issues/451
+    uuid: require.resolve('uuid'),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
