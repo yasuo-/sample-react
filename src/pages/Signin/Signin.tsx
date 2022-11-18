@@ -18,7 +18,7 @@ const contactListQuery = (q: string) => ({
 
 export const loading =
   (queryClient: QueryClient) =>
-  async ({ request }: any) => {
+  async ({ request }: unknown) => {
     const url = new URL(request.url);
     const q = url as unknown as string;
     const res = await queryClient.fetchQuery(contactListQuery(q));
