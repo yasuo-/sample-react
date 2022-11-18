@@ -10,6 +10,7 @@ import { ErrorNotFound } from '@/components/error';
 import { PublicLayout } from '@/components/layout';
 
 import { loading } from '@/pages/Signin/Signin';
+import { queryClient } from '@/providers/AppProvider';
 
 const SigninPage = React.lazy(() => import('@/pages/Signin/Signin'));
 const SignupPage = React.lazy(() => import('@/pages/Signup/Signup'));
@@ -35,11 +36,11 @@ export const publicRoutes: RouteObject[] = [
     path: '/',
     element: <PublicLayout />,
     errorElement: <ErrorNotFound />,
-    loader: loading,
+    loader: loading(queryClient),
     id: 'root',
     children: [
       { index: true, element: <>sss</> },
-      { path: PATH.SIGNIN, element: <SigninPage />, loader: loading },
+      { path: PATH.SIGNIN, element: <SigninPage />, loader: loading(queryClient) },
       { path: PATH.SIGNUP, element: <SignupPage /> },
       // Error
       { path: PATH.ERROR, element: <></> },
