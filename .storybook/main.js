@@ -29,6 +29,9 @@ module.exports = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
       '@public': path.resolve(__dirname, '../public'),
+      find: './runtimeConfig',
+      './runtimeConfig': './runtimeConfig.browser',
+      replacement: './runtimeConfig.browser',
     };
 
     return config;
