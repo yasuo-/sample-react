@@ -29,6 +29,7 @@ module.exports = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
       '@public': path.resolve(__dirname, '../public'),
+      // fix: aws-amplify build error
       find: './runtimeConfig',
       './runtimeConfig': './runtimeConfig.browser',
       replacement: './runtimeConfig.browser',

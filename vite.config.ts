@@ -18,6 +18,7 @@ export default defineConfig({
     alias: {
       '@/': `${__dirname}/src/`,
       '@public/': `${__dirname}/public/`,
+      // fix: aws-amplify build error
       find: './runtimeConfig',
       './runtimeConfig': './runtimeConfig.browser',
       replacement: './runtimeConfig.browser',
