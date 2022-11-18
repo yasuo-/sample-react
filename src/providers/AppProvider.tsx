@@ -18,7 +18,7 @@ const theme: Theme = {
   name: 'my-theme',
   tokens: {
     // Design Tokens
-  }
+  },
 };
 
 // Create a client
