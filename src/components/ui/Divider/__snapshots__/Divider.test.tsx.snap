@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider Ui Components should snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="width: 100px; height: 5px; padding: 4px;"
+  >
+    <p
+      style="margin: 8px;"
+    >
+      text
+    </p>
+    <hr
+      aria-orientation="horizontal"
+      class="amplify-divider amplify-divider--horizontal horizontal black"
+    />
+    <p
+      style="margin: 8px;"
+    >
+      text2
+    </p>
+  </div>
+</DocumentFragment>
+`;

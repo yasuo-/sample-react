@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ThemeProvider, Theme } from '@aws-amplify/ui-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider, HelmetData } from 'react-helmet-async';
@@ -10,6 +11,14 @@ import i18n from '@/lib/locale/i18n';
 
 type AppProviderProps = {
   children: React.ReactNode;
+};
+
+// theme
+const theme: Theme = {
+  name: 'my-theme',
+  tokens: {
+    // Design Tokens
+  },
 };
 
 // Create a client
@@ -26,7 +35,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     <I18nextProvider i18n={i18n}>
       <QueryClientProvider client={queryClient}>
         <HelmetProvider context={helmetContext}>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+          <ThemeProvider theme={theme}>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+          </ThemeProvider>
         </HelmetProvider>
       </QueryClientProvider>
     </I18nextProvider>

@@ -9,6 +9,9 @@ exports[`ErrorFallback Ui Components should snapshot 1`] = `
     <pre>
       An error has occurred.
     </pre>
+    <button>
+      リロード
+    </button>
   </div>
 </DocumentFragment>
 `;

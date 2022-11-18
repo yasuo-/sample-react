@@ -9,10 +9,19 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
+  define: {
+    // By default, Vite doesn't include shims for NodeJS/
+    // necessary for segment analytics lib to work
+    global: {},
+  },
   resolve: {
     alias: {
       '@/': `${__dirname}/src/`,
       '@public/': `${__dirname}/public/`,
+      // fix: aws-amplify build error
+      find: './runtimeConfig',
+      './runtimeConfig': './runtimeConfig.browser',
+      replacement: './runtimeConfig.browser',
     },
   },
 });

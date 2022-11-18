@@ -8,13 +8,13 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     {
-      name: '@storybook/addons-postcss',
+      name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
           implementation: require('postcss'),
-        }
-      }
-    }
+        },
+      },
+    },
   ],
   framework: '@storybook/react',
   core: {
@@ -29,6 +29,10 @@ module.exports = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
       '@public': path.resolve(__dirname, '../public'),
+      // fix: aws-amplify build error
+      find: './runtimeConfig',
+      './runtimeConfig': './runtimeConfig.browser',
+      replacement: './runtimeConfig.browser',
     };
 
     return config;

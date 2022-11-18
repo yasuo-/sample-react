@@ -7,7 +7,7 @@ export const publicRoutes = [
     path: '/',
     element: <PublicLayout />,
     children: [
-      { path: '/', element: <></> },
+      { index: true, element: <>sss</> },
       { path: '/error', element: <></> },
       { path: '*', element: <Navigate to="." /> },
     ],
