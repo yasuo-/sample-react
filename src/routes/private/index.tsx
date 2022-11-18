@@ -9,6 +9,7 @@ import type { RouteObject } from 'react-router-dom';
 import { ErrorNotFound } from '@/components/error';
 import { AuthGuardLayout } from '@/components/layout';
 import { loading } from '@/pages/Signin/Signin';
+import { queryClient } from '@/providers';
 
 /**
  * interface RouteObject {
@@ -31,7 +32,7 @@ export const privateRoutes: RouteObject[] = [
     path: '/',
     element: <AuthGuardLayout />,
     errorElement: <ErrorNotFound />,
-    loader: loading,
+    loader: loading(queryClient),
     children: [
       { index: true, element: <>mypage</> },
       { path: PATH.ACCOUNT, element: <>accounts</> },
