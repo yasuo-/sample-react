@@ -19,6 +19,7 @@ export default defineConfig({
       '@/': `${__dirname}/src/`,
       '@public/': `${__dirname}/public/`,
       find: './runtimeConfig',
+      './runtimeConfig': './runtimeConfig.browser',
       replacement: './runtimeConfig.browser',
     },
   },
