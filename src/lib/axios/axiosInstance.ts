@@ -19,7 +19,7 @@ axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
 
         if (idTokenExpire < currentTimeSeconds) {
           return Auth.currentAuthenticatedUser().then((res) => {
-            res.refreshSession(refreshToken, (error: Error, data: any) => {
+            res.refreshSession(refreshToken, (error: Error, data: unknown) => {
               if (error) {
                 Auth.signOut().finally();
                 return resolve(config);
