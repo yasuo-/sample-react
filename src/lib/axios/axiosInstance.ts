@@ -3,6 +3,14 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import { API_ENDPOINT } from '@/config';
 
+type RefreshSessionData = {
+  getAccessToken: () => {
+    (): never;
+    new (): never;
+    getJwtToken: { (): string; new (): never };
+  };
+};
+
 export const axiosInstance = axios.create({
   baseURL: API_ENDPOINT + '/api',
   timeout: 60000,
@@ -19,7 +27,7 @@ axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
 
         if (idTokenExpire < currentTimeSeconds) {
           return Auth.currentAuthenticatedUser().then((res) => {
-            res.refreshSession(refreshToken, (error: Error, data: unknown) => {
+            res.refreshSession(refreshToken, (error: Error, data: RefreshSessionData) => {
               if (error) {
                 Auth.signOut().finally();
                 return resolve(config);
