@@ -2,7 +2,8 @@
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
   },
   "include": ["src"]
 }

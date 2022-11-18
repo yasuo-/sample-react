@@ -1,4 +1,5 @@
 export const PATH = {
+  HOME: '/',
   // Auth
   SIGNIN: '/signin',
   SIGNUP: '/signup',
@@ -7,6 +8,11 @@ export const PATH = {
   // Dashboard
   DASHBOARD: '/dashboard',
   ACCOUNT: '/account',
+
+  // Common
+  TERMS: '/terms',
+  PRIVACY: '/privacy-policy',
+  CONTACT: '/contact',
   // Error
   ERROR: '/error',
 };

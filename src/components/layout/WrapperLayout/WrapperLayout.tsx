@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ScrollToTop } from '@/components/ui/Scroll';
+
 type Props = {
   children: React.ReactNode;
 };
@@ -7,7 +9,12 @@ type Props = {
  * WrapperLayout
  */
 export const WrapperLayout: React.FC<Props> = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <>
+      <ScrollToTop />
+      {children}
+    </>
+  );
 };
 
 WrapperLayout.displayName = 'WrapperLayout';
