@@ -8,13 +8,13 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     {
-      name: '@storybook/addons-postcss',
+      name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
           implementation: require('postcss'),
-        }
-      }
-    }
+        },
+      },
+    },
   ],
   framework: '@storybook/react',
   core: {
