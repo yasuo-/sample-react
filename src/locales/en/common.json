@@ -5,5 +5,10 @@
       "title": "Page not found",
       "message": "Page not found"
     }
+  },
+  "footer": {
+    "terms": "Terms",
+    "privacy": "Privacy Policy",
+    "contact": "Contact"
   }
 }

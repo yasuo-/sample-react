@@ -2,18 +2,14 @@ import React from 'react';
 
 import { Navigate } from 'react-router-dom';
 
-import { PATH } from './path';
+import { PATH } from '../path';
 
 import type { RouteObject } from 'react-router-dom';
 
 import { ErrorNotFound } from '@/components/error';
-import { PublicLayout } from '@/components/layout';
-
+import { AuthGuardLayout } from '@/components/layout';
 import { loading } from '@/pages/Signin/Signin';
-import { queryClient } from '@/providers/AppProvider';
-
-const SigninPage = React.lazy(() => import('@/pages/Signin/Signin'));
-const SignupPage = React.lazy(() => import('@/pages/Signup/Signup'));
+import { queryClient } from '@/providers';
 
 /**
  * interface RouteObject {
@@ -31,17 +27,15 @@ const SignupPage = React.lazy(() => import('@/pages/Signup/Signup'));
  * }
  */
 
-export const publicRoutes: RouteObject[] = [
+export const privateRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <PublicLayout />,
+    element: <AuthGuardLayout />,
     errorElement: <ErrorNotFound />,
     loader: loading(queryClient),
-    id: 'root',
     children: [
-      { index: true, element: <>sss</> },
-      { path: PATH.SIGNIN, element: <SigninPage />, loader: loading(queryClient) },
-      { path: PATH.SIGNUP, element: <SignupPage /> },
+      { index: true, element: <>mypage</> },
+      { path: PATH.ACCOUNT, element: <>accounts</> },
       // Error
       { path: PATH.ERROR, element: <></> },
       { path: '*', element: <Navigate to="." /> },

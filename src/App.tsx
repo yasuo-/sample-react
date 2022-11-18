@@ -1,10 +1,15 @@
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { RouterProvider } from 'react-router-dom';
+
 import { AppProvider } from './providers';
-import { AppRoutes } from './routes';
+
+import { router } from '@/routes';
 
 const App = () => {
   return (
     <AppProvider>
-      <AppRoutes />
+      <RouterProvider router={router} />
+      <ReactQueryDevtools position="bottom-right" />
     </AppProvider>
   );
 };

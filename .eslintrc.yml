@@ -22,6 +22,7 @@ rules:
       argsIgnorePattern: "_"
       ignoreRestSiblings: false
       varsIgnorePattern: "_"
+  "@typescript-eslint/ban-ts-comment": "off"
   "react/prop-types": "off"
   "react/react-in-jsx-scope": "off"
   "unused-imports/no-unused-imports": "error"
