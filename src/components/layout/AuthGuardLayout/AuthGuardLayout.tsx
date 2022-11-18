@@ -1,19 +1,20 @@
 import React, { Suspense } from 'react';
 
-import { Flex } from '@aws-amplify/ui-react';
 import { Outlet } from 'react-router-dom';
 
 import { WrapperLayout } from '../WrapperLayout/WrapperLayout';
 
+import { AuthGuardProvider } from '@/providers/AuthGuardProvider';
+
 /**
- * PublicLayout
+ * AuthGuardLayout
  */
-export const PublicLayout: React.FC = () => (
-  <WrapperLayout>
-    <Flex direction="column" justifyContent="center" alignItems="center">
+export const AuthGuardLayout: React.FC = () => (
+  <AuthGuardProvider>
+    <WrapperLayout>
       <Suspense fallback={<></>}>
         <Outlet />
       </Suspense>
-    </Flex>
-  </WrapperLayout>
+    </WrapperLayout>
+  </AuthGuardProvider>
 );
