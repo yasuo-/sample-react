@@ -18,17 +18,17 @@ export const Footer: React.FC = () => {
     <footer className="mx-auto mt-60 w-full bg-mine-shaft-800">
       <div className="flex justify-center justify-items-center py-2.5">
         <div>
-          <Link to={PATH.TERMS} className={linkStyle}>
+          <Link to={PATH.TERMS} className={linkStyle} data-testid={'terms'}>
             {t('footer.terms')}
           </Link>
         </div>
         <div className="mx-2.5">
-          <Link to={PATH.PRIVACY} className={linkStyle}>
+          <Link to={PATH.PRIVACY} className={linkStyle} data-testid={'privacy'}>
             {t('footer.privacy')}
           </Link>
         </div>
         <div>
-          <Link to={PATH.CONTACT} className={linkStyle}>
+          <Link to={PATH.CONTACT} className={linkStyle} data-testid={'contact'}>
             {t('footer.contact')}
           </Link>
         </div>
