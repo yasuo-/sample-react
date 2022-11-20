@@ -14,6 +14,7 @@ import { queryClient } from '@/providers/AppProvider';
 
 const SigninPage = React.lazy(() => import('@/pages/Signin/Signin'));
 const SignupPage = React.lazy(() => import('@/pages/Signup/Signup'));
+const SignupIndexPage = React.lazy(() => import('@/pages/Signup/SignupIndex'));
 
 /**
  * interface RouteObject {
@@ -41,7 +42,11 @@ export const publicRoutes: RouteObject[] = [
     children: [
       { index: true, element: <>sss</> },
       { path: PATH.SIGNIN, element: <SigninPage />, loader: loading(queryClient) },
-      { path: PATH.SIGNUP, element: <SignupPage /> },
+      {
+        path: PATH.SIGNUP,
+        element: <SignupPage />,
+        children: [{ index: true, element: <SignupIndexPage /> }],
+      },
       // Error
       { path: PATH.ERROR, element: <></> },
       { path: '*', element: <Navigate to="." /> },
