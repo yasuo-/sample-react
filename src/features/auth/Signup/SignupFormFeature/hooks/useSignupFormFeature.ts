@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import { SignupFormVale } from '@/pages/Signup/Signup';
-import { awsAuthService } from '@/services/aws';
+import type { SignupFormVale } from '@/types/form/authForm';
+
+import { authService } from '@/services';
 
 export const useSignupFormFeature = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,7 +15,7 @@ export const useSignupFormFeature = () => {
       password: data.password,
     };
     try {
-      await awsAuthService.signUp(body);
+      await authService.signUp(body);
     } catch (e) {
       console.error(e);
       // @ts-ignore

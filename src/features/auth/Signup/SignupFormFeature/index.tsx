@@ -4,18 +4,15 @@ import { useTranslation } from 'react-i18next';
 
 import { useSignupFormFeature } from './hooks/useSignupFormFeature';
 
+import type { SignupFormVale } from '@/types/form/authForm';
+
 import { RequiredLabel } from '@/components/ui/Form/RequiredLabel';
-import { SignupFormVale } from '@/pages/Signup/Signup';
 
 const inputClassName =
   'textinput block w-full p-2.5' +
   'border border-form-mercury-200 bg-form-mercury-200' +
   'text-black/90 text-sm rounded-2lg focus:ring-fuego-500 focus:border-fuego-500';
 
-/**
- * SignupFormFeature
- * @returns {JSX.Element}
- */
 export const SignupFormFeature = () => {
   const { t } = useTranslation('auth');
   const { isSubmitting, onSubmit } = useSignupFormFeature();

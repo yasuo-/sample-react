@@ -1,3 +1,4 @@
+import { CognitoUser } from 'amazon-cognito-identity-js';
 import { Auth } from 'aws-amplify';
 
 import type { SignUpParams } from '@aws-amplify/auth/src/types';
@@ -32,8 +33,16 @@ class AwsAuthService {
     await Auth.signUp(params);
   }
 
-  async login(username: string, password: string) {
-    await Auth.signIn(username, password);
+  async signIn(params: { username: string }) {
+    await Auth.signIn(params.username);
+  }
+
+  async signInConfirmOtp(params: { user: CognitoUser; code: string }) {
+    await Auth.sendCustomChallengeAnswer(params.user, params.code);
+  }
+
+  async signInWithPassword(params: { username: string; password: string }) {
+    await Auth.signIn(params.username, params.password);
   }
 
   async logout() {

@@ -3,11 +3,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { Outlet } from 'react-router-dom';
 import * as yup from 'yup';
 
-export type SignupFormVale = {
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+import type { SignupFormVale } from '@/types/form/authForm';
 
 export const signupSchema = yup.object().shape({
   email: yup.string().email().required(),
