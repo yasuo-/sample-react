@@ -8,7 +8,7 @@ import type { RouteObject } from 'react-router-dom';
 
 import { ErrorNotFound } from '@/components/error';
 import { AuthGuardLayout } from '@/components/layout';
-import { loading } from '@/pages/Signin/Signin';
+import { loading } from '@/pages/Signin/SigninIndex2';
 import { queryClient } from '@/providers';
 
 /**

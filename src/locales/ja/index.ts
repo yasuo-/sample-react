@@ -1,4 +1,5 @@
+import auth from './auth.json';
 import common from './common.json';
 
-const ja = { common };
+const ja = { auth, common };
 export default ja;
