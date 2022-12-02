@@ -1,4 +1,4 @@
-import { axiosInstance } from '@/lib/axios/axiosInstance';
+import { ky } from '@/lib/api-client/ky';
 
 export * from './locale/i18n';
-export { axiosInstance as axios };
+export { ky as axios };
