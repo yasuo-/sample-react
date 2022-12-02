@@ -12,8 +12,14 @@ import { PublicLayout } from '@/components/layout';
 import { loading } from '@/pages/Signin/Signin';
 import { queryClient } from '@/providers/AppProvider';
 
-const SigninPage = React.lazy(() => import('@/pages/Signin/Signin'));
+const SignInPage = React.lazy(() => import('@/pages/Signin/Signin'));
 const SignupPage = React.lazy(() => import('@/pages/Signup/Signup'));
+
+const ContactInputPage = React.lazy(() => import('@/pages/Contact/Input'));
+const ContactConfirmPage = React.lazy(() => import('@/pages/Contact/Confirm'));
+const ContactCompletePage = React.lazy(() => import('@/pages/Contact/Complete'));
+const TermsPage = React.lazy(() => import('@/pages/Terms/Terms'));
+const PrivacyPage = React.lazy(() => import('@/pages/Terms/Privacy'));
 
 /**
  * interface RouteObject {
@@ -40,8 +46,18 @@ export const publicRoutes: RouteObject[] = [
     id: 'root',
     children: [
       { index: true, element: <>sss</> },
-      { path: PATH.SIGNIN, element: <SigninPage />, loader: loading(queryClient) },
+      { path: PATH.SIGNIN, element: <SignInPage />, loader: loading(queryClient) },
       { path: PATH.SIGNUP, element: <SignupPage /> },
+      { path: PATH.TERMS, element: <TermsPage /> },
+      { path: PATH.PRIVACY, element: <PrivacyPage /> },
+      {
+        path: PATH.CONTACT,
+        element: <ContactInputPage />,
+        children: [
+          { path: PATH.CONTACT_CONFIRM, element: <ContactConfirmPage /> },
+          { path: PATH.CONTACT_COMPLETE, element: <ContactCompletePage /> },
+        ],
+      },
       // Error
       { path: PATH.ERROR, element: <></> },
       { path: '*', element: <Navigate to="." /> },
