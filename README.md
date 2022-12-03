@@ -5,20 +5,45 @@
 
 ## Description
 
-react sample project
+Studio Web
 
 ## Getting Started
 
 ```react
 $ yarn install
-$ yarn start
+$ yarn dev
+
+test関連
+$ yarn test:jest
+$ yarn test:cy:open
+$ yarn lint:fix
+$ yarn format:fix
+
+storybook関連
+$ yarn storybook
 ```
+
+## Cording Style
+
+see:
+[Bulletproof React](https://github.com/alan2207/bulletproof-react)
+[Airbnb JavaScript Style Guide](https://mitsuruog.github.io/javascript-style-guide/)
+
+## Libraries
+
+- React Router v6.4~ `createBrowserRouter` is used.
+- Recoil
+- React Query
+- React Hook Form
+- i18next
+
+## Testing
+
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Cypress](https://www.cypress.io/)
+
 
 ## UI Components
 
-[radix-ui](https://www.radix-ui.com/) is a UI component library for React.
-
-radix-ui is WAI-ARIA compliant.
-- Keyboard navigation
-- Focus management
-- Screen reader tested
+[Amplify UI](https://ui.docs.amplify.aws/) is a UI component library for React.
