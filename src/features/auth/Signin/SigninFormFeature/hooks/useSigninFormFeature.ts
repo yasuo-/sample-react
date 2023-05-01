@@ -41,7 +41,7 @@ export const useSignInFormFeature = () => {
       navigate('/signin/confirm-otp', {
         state: { user: res },
       });
-    } catch (e: never) {
+    } catch (e: unknown) {
       console.error(e);
       setError(errorMessages(e as SignInError));
     } finally {

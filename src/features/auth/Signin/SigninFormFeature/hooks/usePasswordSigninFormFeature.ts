@@ -40,7 +40,7 @@ export const usePasswordSignInFormFeature = () => {
     try {
       await authService.signInWithPassword(body);
       navigate('/dashboard');
-    } catch (e: never) {
+    } catch (e: unknown) {
       console.error(e);
       setError(errorMessages(e as SignInError));
     }

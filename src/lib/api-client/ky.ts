@@ -1,5 +1,10 @@
 import { Auth } from 'aws-amplify';
-import ky, { AfterResponseHook, BeforeRequestHook } from 'ky';
+// todo: 'ky' is declared here.
+// // @ts-expect-error
+// error TS2578: Unused '@ts-expect-error' directive.
+import ky from 'ky';
+
+import type { AfterResponseHook, BeforeRequestHook } from 'ky';
 
 import { API_ENDPOINT } from '@/config';
 

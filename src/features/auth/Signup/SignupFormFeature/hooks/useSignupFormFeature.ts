@@ -21,9 +21,10 @@ export const useSignupFormFeature = () => {
     };
     try {
       await authService.signUp(body);
-    } catch (e) {
+    } catch (e: unknown) {
       console.error(e);
-      setError(e.message as SignupError['message']);
+      const error = e as SignupError;
+      setError(error.message);
     } finally {
       setIsSubmitting(false);
     }
