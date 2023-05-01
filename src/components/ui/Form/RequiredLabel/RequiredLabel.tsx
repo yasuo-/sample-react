@@ -1,9 +1,9 @@
 import { Text } from '@aws-amplify/ui-react';
 
-type RequiredLabelProps = {
+interface RequiredLabelProps {
   label: string;
   requiredText?: string | null;
-};
+}
 
 /**
  * RequiredLabel

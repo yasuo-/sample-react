@@ -13,7 +13,7 @@ export const ErrorFallback: React.FC<FallbackProps> = ({ error, resetErrorBounda
   return (
     <div>
       <h2>エラーが発生しました。</h2>
-      <pre>{error.message}</pre>
+      <pre>{error}</pre>
 
       <button onClick={resetErrorBoundary}>リロード</button>
     </div>

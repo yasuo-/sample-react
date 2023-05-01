@@ -1,14 +1,14 @@
 import React, { createContext, useContext } from 'react';
 
-export type AuthGuardContextType = {
+export interface AuthGuardContextType {
   accessToken: string | null;
   signIn: (accessToken: string) => void;
   signOut: () => void;
-};
+}
 
-type AuthGuardProviderProps = {
+interface AuthGuardProviderProps {
   children: React.ReactNode;
-};
+}
 
 /**
  * AuthGuardContext

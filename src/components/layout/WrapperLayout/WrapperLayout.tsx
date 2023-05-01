@@ -2,9 +2,9 @@ import React from 'react';
 
 import { ScrollToTop } from '@/components/ui/Scroll';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 /**
  * WrapperLayout
  */

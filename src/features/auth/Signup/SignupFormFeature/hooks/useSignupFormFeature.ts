@@ -4,6 +4,11 @@ import type { SignupFormVale } from '@/types/form/authForm';
 
 import { authService } from '@/services';
 
+interface SignupError {
+  code: string;
+  message: string;
+}
+
 export const useSignupFormFeature = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -18,10 +23,10 @@ export const useSignupFormFeature = () => {
       await authService.signUp(body);
     } catch (e) {
       console.error(e);
-      // @ts-ignore
-      setError(e.message);
+      setError(e.message as SignupError['message']);
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return {

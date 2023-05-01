@@ -11,9 +11,7 @@ export const AppRoutes = () => {
   // auth logic
   const auth = false;
   const routes = auth ? privateRoutes : publicRoutes;
-  const element = useRoutes([...routes]);
-
-  return element;
+  return useRoutes([...routes]);
 };
 
 /**

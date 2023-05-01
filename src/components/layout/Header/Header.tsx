@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 import { PATH } from '@/routes/path';
 
-type HeaderProps = {
+interface HeaderProps {
   siteTitle?: string;
   src?: string;
   logoWidth?: number;
   logoHeight?: number;
-};
+}
 
 /**
  * Header
