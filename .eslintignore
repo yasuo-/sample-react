@@ -48,5 +48,17 @@ jest.config.ts
 setup/
 
 tsconfig.jest.json
+tsconfig.eslint.json
 tsconfig.json
 tsconfig.paths.json
+vite.config.ts
+
+
+# src/~
+src/**/__tests__/*
+src/**/tests/*
+src/**/__mocks__/*
+src/**/**.stories.tsx
+src/**/**.test.ts
+src/**/**.test.tsx
+src/**/**.d.ts
