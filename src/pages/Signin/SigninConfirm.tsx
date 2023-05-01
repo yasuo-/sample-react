@@ -27,7 +27,7 @@ const contactListQuery = (q: string) => ({
 
 export const loading =
   (queryClient: QueryClient) =>
-  async ({ request } : {request: { url: string }}) => {
+  async ({ request }: { request: { url: string } }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
     const url = new URL(request.url);
     const q = url as unknown as string;
