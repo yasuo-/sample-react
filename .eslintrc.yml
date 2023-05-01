@@ -26,7 +26,7 @@ plugins:
 rules:
   "complexity":
     - "error"
-    - 2
+    - 11
   "@typescript-eslint/no-unused-vars":
     - "error"
     - vars: "all"
@@ -34,6 +34,11 @@ rules:
       argsIgnorePattern: "_"
       ignoreRestSiblings: false
       varsIgnorePattern: "_"
+  "@typescript-eslint/no-misused-promises":
+    - "error"
+    - checksVoidReturn:
+        arguments: false
+        attributes: false
   "react/prop-types": "off"
   "react/react-in-jsx-scope": "off"
   "unused-imports/no-unused-imports": "error"
