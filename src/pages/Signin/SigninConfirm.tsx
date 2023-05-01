@@ -10,13 +10,14 @@ interface GetError {
   data: null;
 }
 
-
 const getContacts = () => {
-  return axios
-    .get(api)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    .then((res) => [res.data, null])
-    .catch((err) => [null, err as GetError]);
+  return (
+    axios
+      .get(api)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      .then((res) => [res.data, null])
+      .catch((err) => [null, err as GetError])
+  );
 };
 
 const contactListQuery = (q: string) => ({
@@ -26,7 +27,6 @@ const contactListQuery = (q: string) => ({
 
 export const loading =
   (queryClient: QueryClient) =>
-
   async ({ request }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
     const url = new URL(request.url);

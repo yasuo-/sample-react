@@ -60,10 +60,7 @@ export const SignupFormFeature = () => {
       <View className="mb-5">
         <TextField
           label={
-            <RequiredLabel
-              label={t('form.password-confirmation')}
-              requiredText={requiredText}
-            />
+            <RequiredLabel label={t('form.password-confirmation')} requiredText={requiredText} />
           }
           type="password"
           isRequired={true}

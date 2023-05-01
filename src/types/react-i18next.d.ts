@@ -8,5 +8,5 @@ declare module 'react-i18next' {
       common: typeof ja.common;
     };
   }
-  type NameSpace = typeof ns[number];
+  type NameSpace = (typeof ns)[number];
 }

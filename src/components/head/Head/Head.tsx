@@ -14,7 +14,7 @@ interface HeadProps {
  * @param description [optional] - description
  * @constructor
  */
-export const Head: React.FC<HeadProps> = ({ title = '' , description = '' }) => {
+export const Head: React.FC<HeadProps> = ({ title = '', description = '' }) => {
   return (
     <Helmet title={`${title} | ${SITE_TITLE}`} defaultTitle={SITE_TITLE}>
       <meta name="description" content={description} />

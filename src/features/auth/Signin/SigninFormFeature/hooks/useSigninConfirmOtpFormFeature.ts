@@ -17,12 +17,12 @@ export const useSignInConfirmOtpFormFeature = (user: CognitoUser) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
 
-  const errorMessages = (error: SignInConfirmOtpError): string =>  {
+  const errorMessages = (error: SignInConfirmOtpError): string => {
     if (error.code === 'NotAuthorizedException') {
       return 'Invalid session for the user.';
     }
     return error.message;
-  }
+  };
 
   const onSubmit = async (data: SignInConfirmFormVale) => {
     setIsSubmitting(true);

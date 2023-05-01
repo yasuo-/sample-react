@@ -16,7 +16,7 @@ export const useSignInFormFeature = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
 
-  const errorMessages = (error: SignInError): string =>  {
+  const errorMessages = (error: SignInError): string => {
     switch (error.code) {
       case 'InvalidParameterException':
         return 'Custom auth lambda trigger is not configured for the user pool.';
@@ -29,7 +29,7 @@ export const useSignInFormFeature = () => {
       default:
         return error.message;
     }
-  }
+  };
 
   const onSubmit = async (data: SignInFormVale) => {
     setIsSubmitting(true);
