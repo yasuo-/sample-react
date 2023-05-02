@@ -6,10 +6,30 @@ import type { PasswordSignInFormVale } from '@/types/form/authForm';
 
 import { authService } from '@/services';
 
+interface SignInError {
+  code: string;
+  message: string;
+}
+
 export const usePasswordSignInFormFeature = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
+
+  const errorMessages = (error: SignInError): string => {
+    switch (error.code) {
+      case 'InvalidParameterException':
+        return 'Custom auth lambda trigger is not configured for the user pool.';
+      case 'UserNotFoundException':
+        return 'ユーザーが存在しません';
+      case 'UserLambdaValidationException':
+        return 'システムエラーが発生しました';
+      case 'NotAuthorizedException':
+        return 'ユーザー名またはパスワードが違います';
+      default:
+        return error.message;
+    }
+  };
 
   const onSubmit = async (data: PasswordSignInFormVale) => {
     setIsSubmitting(true);
@@ -20,22 +40,9 @@ export const usePasswordSignInFormFeature = () => {
     try {
       await authService.signInWithPassword(body);
       navigate('/dashboard');
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error(e);
-      let message = e.message;
-      if (e.code === 'InvalidParameterException') {
-        message = 'Custom auth lambda trigger is not configured for the user pool.';
-      }
-      if (e.code === 'UserNotFoundException') {
-        message = 'ユーザーが存在しません';
-      }
-      if (e.code === 'UserLambdaValidationException') {
-        message = 'システムエラーが発生しました';
-      }
-      if (e.code === 'NotAuthorizedException') {
-        message = 'ユーザー名またはパスワードが違います';
-      }
-      setError(message);
+      setError(errorMessages(e as SignInError));
     }
     setIsSubmitting(false);
   };

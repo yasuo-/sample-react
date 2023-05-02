@@ -7,10 +7,22 @@ import type { SignInConfirmFormVale } from '@/types/form/authForm';
 
 import { authService } from '@/services';
 
+interface SignInConfirmOtpError {
+  code: string;
+  message: string;
+}
+
 export const useSignInConfirmOtpFormFeature = (user: CognitoUser) => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
+
+  const errorMessages = (error: SignInConfirmOtpError): string => {
+    if (error.code === 'NotAuthorizedException') {
+      return 'Invalid session for the user.';
+    }
+    return error.message;
+  };
 
   const onSubmit = async (data: SignInConfirmFormVale) => {
     setIsSubmitting(true);
@@ -23,11 +35,7 @@ export const useSignInConfirmOtpFormFeature = (user: CognitoUser) => {
       navigate('/dashboard');
     } catch (e: any) {
       console.error(e);
-      let message = e.message;
-      if (e.code === 'NotAuthorizedException') {
-        message = 'Invalid session for the user.';
-      }
-      setError(message);
+      setError(errorMessages(e as SignInConfirmOtpError));
     }
     setIsSubmitting(false);
   };

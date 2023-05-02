@@ -11,9 +11,9 @@ import { ErrorFallback } from '@/components/error';
 import i18n from '@/lib/locale/i18n';
 import theme from '@/theme';
 
-type AppProviderProps = {
+interface AppProviderProps {
   children: React.ReactNode;
-};
+}
 
 // Create a client
 export const queryClient = new QueryClient({

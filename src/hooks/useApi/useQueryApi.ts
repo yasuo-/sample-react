@@ -24,7 +24,7 @@ export const useQueryApi = <
 
   return useQuery({
     queryKey,
-    queryFn: async () => fetcher(queryKey[1], accessToken || ''),
+    queryFn: async () => fetcher(queryKey[1], accessToken ?? ''),
     ...options,
   });
 };

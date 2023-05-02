@@ -1,11 +1,19 @@
 ignorePatterns:
   - "*.config.js"
   - "dist"
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: './tsconfig.json'
 extends:
   - "eslint:recommended"
-  - "plugin:cypress/recommended"
   - "plugin:@typescript-eslint/recommended"
+  - "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  - "plugin:@typescript-eslint/strict"
+  - "plugin:sonarjs/recommended"
   - "plugin:react/recommended"
+  - "plugin:react-hooks/recommended"
+  - "plugin:cypress/recommended"
+  - "plugin:jest/recommended"
   - "prettier"
 settings:
   react:
@@ -14,7 +22,11 @@ plugins:
   - "cypress"
   - "import"
   - "unused-imports"
+  - "sonarjs"
 rules:
+  "complexity":
+    - "error"
+    - 11
   "@typescript-eslint/no-unused-vars":
     - "error"
     - vars: "all"
@@ -22,7 +34,11 @@ rules:
       argsIgnorePattern: "_"
       ignoreRestSiblings: false
       varsIgnorePattern: "_"
-  "@typescript-eslint/ban-ts-comment": "off"
+  "@typescript-eslint/no-misused-promises":
+    - "error"
+    - checksVoidReturn:
+        arguments: false
+        attributes: false
   "react/prop-types": "off"
   "react/react-in-jsx-scope": "off"
   "unused-imports/no-unused-imports": "error"
@@ -32,7 +48,7 @@ rules:
       "varsIgnorePattern": "^_"
       "args": "after-used"
       "argsIgnorePattern": "^_"
-  import/order:
+  "import/order":
     - error
     - groups:
         - builtin

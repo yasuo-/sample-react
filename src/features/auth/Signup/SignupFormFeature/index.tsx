@@ -17,6 +17,8 @@ export const SignupFormFeature = () => {
   const { t } = useTranslation('auth');
   const { isSubmitting, onSubmit } = useSignupFormFeature();
 
+  const requiredText = t('form.required');
+
   const {
     handleSubmit,
     register,
@@ -27,7 +29,7 @@ export const SignupFormFeature = () => {
     <form className="signup" id="signup_form" onSubmit={handleSubmit(onSubmit)}>
       <View className="mb-5">
         <TextField
-          label={<RequiredLabel label={t('form.email')} requiredText={t('form.required')} />}
+          label={<RequiredLabel label={t('form.email')} requiredText={requiredText} />}
           type="email"
           isRequired={true}
           size="small"
@@ -42,7 +44,7 @@ export const SignupFormFeature = () => {
 
       <View className="mb-5">
         <TextField
-          label={<RequiredLabel label={t('form.password')} requiredText={t('form.required')} />}
+          label={<RequiredLabel label={t('form.password')} requiredText={requiredText} />}
           type="password"
           isRequired={true}
           size="small"
@@ -58,10 +60,7 @@ export const SignupFormFeature = () => {
       <View className="mb-5">
         <TextField
           label={
-            <RequiredLabel
-              label={t('form.password-confirmation')}
-              requiredText={t('form.required')}
-            />
+            <RequiredLabel label={t('form.password-confirmation')} requiredText={requiredText} />
           }
           type="password"
           isRequired={true}

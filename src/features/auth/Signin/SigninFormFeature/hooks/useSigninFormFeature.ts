@@ -6,10 +6,30 @@ import type { SignInFormVale } from '@/types/form/authForm';
 
 import { authService } from '@/services';
 
+interface SignInError {
+  code: string;
+  message: string;
+}
+
 export const useSignInFormFeature = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
+
+  const errorMessages = (error: SignInError): string => {
+    switch (error.code) {
+      case 'InvalidParameterException':
+        return 'Custom auth lambda trigger is not configured for the user pool.';
+      case 'UserNotFoundException':
+        return 'User does not exist.';
+      case 'UserLambdaValidationException':
+        return 'Password reset required for the user.';
+      case 'NotAuthorizedException':
+        return 'failed with error Email address is not verified.';
+      default:
+        return error.message;
+    }
+  };
 
   const onSubmit = async (data: SignInFormVale) => {
     setIsSubmitting(true);
@@ -21,24 +41,12 @@ export const useSignInFormFeature = () => {
       navigate('/signin/confirm-otp', {
         state: { user: res },
       });
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error(e);
-      let message = e.message;
-      if (e.code === 'InvalidParameterException') {
-        message = 'Custom auth lambda trigger is not configured for the user pool';
-      }
-      if (e.code === 'UserNotFoundException') {
-        message = 'User does not exist.';
-      }
-      if (e.code === 'PasswordResetRequiredException') {
-        message = 'Password reset required for the user.';
-      }
-      if (e.code === 'UserLambdaValidationException') {
-        message = 'failed with error Email address is not verified.';
-      }
-      setError(message);
+      setError(errorMessages(e as SignInError));
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return {

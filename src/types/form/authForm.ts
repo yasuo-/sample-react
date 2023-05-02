@@ -1,17 +1,17 @@
-export type SignInFormVale = {
+export interface SignInFormVale {
   email: string;
-};
+}
 
-export type SignInConfirmFormVale = {
+export interface SignInConfirmFormVale {
   code: string;
-};
+}
 
 export type PasswordSignInFormVale = SignInFormVale & {
   password: string;
 };
 
-export type SignupFormVale = {
+export interface SignupFormVale {
   email: string;
   password: string;
   confirmPassword: string;
-};
+}

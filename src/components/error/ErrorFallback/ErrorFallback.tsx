@@ -1,7 +1,12 @@
 import React from 'react';
 
-import { FallbackProps } from 'react-error-boundary';
-
+interface ErrorFallbackProps {
+  error: {
+    name: Error | string;
+    message: string;
+  };
+  resetErrorBoundary: (...args: never[]) => void;
+}
 /**
  * ErrorFallback
  * Fallback component for ErrorBoundary.
@@ -9,7 +14,7 @@ import { FallbackProps } from 'react-error-boundary';
  * @param resetErrorBoundary Reset error boundary
  * @constructor
  */
-export const ErrorFallback: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
+export const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetErrorBoundary }) => {
   return (
     <div>
       <h2>エラーが発生しました。</h2>

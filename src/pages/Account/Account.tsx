@@ -7,12 +7,17 @@ import { Outlet } from 'react-router-dom';
 import { API_ENDPOINT } from '@/config';
 import { apiClient } from '@/lib/api-client/ky';
 
+interface GetError {
+  error: Error;
+  data: null;
+}
+
 const getAccount = () =>
   apiClient
     .get(API_ENDPOINT)
     .then((res) => res.json())
     .then((res) => [res, null])
-    .catch((err) => [null, err]);
+    .catch((err) => [null, err as GetError]);
 
 const accountQuery = () => ({
   queryKey: ['account'],

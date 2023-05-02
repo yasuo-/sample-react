@@ -29,9 +29,9 @@ export const usePrefetchApi = <
       return;
     }
 
-    queryClient.prefetchQuery({
+    void queryClient.prefetchQuery({
       queryKey,
-      queryFn: async () => fetcher(queryKey[1], accessToken || ''),
+      queryFn: async () => fetcher(queryKey[1], accessToken ?? ''),
       ...options,
     });
   };

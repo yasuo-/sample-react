@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async';
 
 import { SITE_TITLE } from '@/config/constants';
 
-type HeadProps = {
+interface HeadProps {
   title?: string;
   description?: string;
-};
+}
 /**
  * Head
  * @param title [optional] - defaults to SITE_TITLE
@@ -16,7 +16,7 @@ type HeadProps = {
  */
 export const Head: React.FC<HeadProps> = ({ title = '', description = '' }) => {
   return (
-    <Helmet title={title ? `${title} | ${SITE_TITLE}` : undefined} defaultTitle={SITE_TITLE}>
+    <Helmet title={`${title} | ${SITE_TITLE}`} defaultTitle={SITE_TITLE}>
       <meta name="description" content={description} />
     </Helmet>
   );

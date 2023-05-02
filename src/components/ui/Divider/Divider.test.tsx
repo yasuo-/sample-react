@@ -27,7 +27,7 @@ describe('Divider Ui Components', () => {
       </div>
     );
 
-    const divider = screen.queryByRole(/separator/i);
+    const divider = screen.queryByRole('separator');
     expect(divider).toHaveClass('horizontal');
   });
 
@@ -38,7 +38,7 @@ describe('Divider Ui Components', () => {
       </div>
     );
 
-    const divider = screen.queryByRole(/separator/i);
+    const divider = screen.queryByRole('separator');
     expect(divider).toHaveClass('vertical');
   });
 });

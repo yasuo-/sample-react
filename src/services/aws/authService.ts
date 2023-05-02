@@ -5,7 +5,7 @@ import type { SignUpParams } from '@aws-amplify/auth/src/types';
 
 class AwsAuthService {
   constructor() {
-    this.init();
+    void this.init();
   }
 
   async init() {
